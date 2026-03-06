@@ -7,18 +7,50 @@
   <meta name="description" content="The Montague Police Association is a 501(c)(3) nonprofit supporting officers, community programs, and public safety initiatives in Montague, Massachusetts." />
 
   <!-- Basic styling (no external libraries needed) -->
-  <style>/* ===== Header / Branding ===== */
+<style>
+
+/* ===== Color Variables ===== */
+
+:root {
+  --primary: #0b2a4a;
+  --secondary: #bfa14a;
+  --light: #f4f6f8;
+  --dark: #1f2933;
+}
+
+/* ===== Global ===== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* Responsive Images */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== Header ===== */
+
 .site-header {
   background: var(--primary);
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 3px solid var(--secondary);
+  box-shadow: 0 3px 10px rgba(0,0,0,.25);
 }
 
 .header-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: .75rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -31,63 +63,46 @@
 }
 
 .brand img {
-  height: 150px;
-  width: auto;
+  height: 80px;
 }
 
 .brand-text h1 {
   margin: 0;
-  font-size: 1.6rem;
-  color: #ffffff;
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* ===== Navigation ===== */
+
+.main-nav {
+  display: flex;
+  align-items: center;
 }
 
 .main-nav a {
-  color: #ffffff;
+  color: white;
   margin-left: 1.25rem;
   text-decoration: none;
   font-weight: bold;
+  transition: color .25s ease;
 }
 
 .main-nav a:hover {
-  text-decoration: underline;
+  color: var(--secondary);
 }
 
-    :root {
-      --primary: #0b2a4a; /* navy */
-      --secondary: #bfa14a; /* gold */
-      --light: #f4f6f8;
-      --dark: #1f2933;
-    }
+/* ===== Mobile Menu Button ===== */
 
-    * {
-      box-sizing: border-box;
-    }
-
-    
-
-    header h1 {
-      margin: 0;
-      font-size: 1.8rem;
-    }
-
-    nav {
-      margin-top: 0.75rem;
-    }
-
-    nav a {
-      color: #ffffff;
-      margin-right: 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    body {
-  margin: 0;
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
+
+/* ===== Hero ===== */
 
 .hero {
   background:
@@ -95,7 +110,7 @@
     url("montague-police-cruiser.JPG");
   background-size: cover;
   background-position: center;
-  color: #ffffff;
+  color: white;
   min-height: 420px;
   display: flex;
   flex-direction: column;
@@ -104,89 +119,142 @@
   text-align: center;
 }
 
+.hero h2 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,.5);
+}
 
-    .hero h2 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-    }
+.hero p {
+  max-width: 700px;
+  margin: 0 auto 1.5rem auto;
+  font-size: 1.1rem;
+}
 
-    .hero p {
-      max-width: 700px;
-      margin: 0 auto 1.5rem auto;
-      font-size: 1.1rem;
-    }
+/* ===== Buttons ===== */
 
-    .btn {
+.btn {
   display: inline-block;
   background: var(--secondary);
-  color: #000000;
-  padding: 0.85rem 1.5rem;
+  color: black;
+  padding: .85rem 1.5rem;
   text-decoration: none;
   font-weight: bold;
   border-radius: 6px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform .2s ease, box-shadow .2s ease;
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 15px rgba(0,0,0,.2);
 }
 
+/* ===== Sections ===== */
 
-    section {
-      padding: 3rem 1rem;
-    }
+section {
+  padding: 3rem 1rem;
+}
 
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
-    section h3 {
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
+section h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
+/* ===== Cards ===== */
 
-    .card {
-  background: #ffffff;
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: white;
   padding: 1.75rem;
   border-radius: 8px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease;
+  transition: transform .2s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
 }
 
+/* ===== Footer ===== */
 
-    footer {
-      background: var(--primary);
-      color: #ffffff;
-      text-align: center;
-      padding: 1.5rem 1rem;
-      font-size: 0.9rem;
-    }
+footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: .9rem;
+}
 
-    footer p {
-      margin: 0.3rem 0;
-    }
+footer p {
+  margin: .3rem 0;
+}
 
-    .notice {
-      font-size: 0.9rem;
-      background: #eef2f6;
-      padding: 1rem;
-      border-left: 4px solid var(--secondary);
-      margin-top: 1rem;
-    }
-  </style>
+/* ===== Notice ===== */
+
+.notice {
+  font-size: .9rem;
+  background: #eef2f6;
+  padding: 1rem;
+  border-left: 4px solid var(--secondary);
+  margin-top: 1rem;
+}
+
+/* ===== Mobile Styles ===== */
+
+@media (max-width: 768px) {
+
+  .brand img {
+    height: 55px;
+  }
+
+  .brand-text h1 {
+    font-size: 1.2rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--primary);
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .main-nav a {
+    display: block;
+    padding: .75rem 0;
+    margin: 0;
+  }
+
+  .main-nav.active {
+    display: flex;
+  }
+
+  .hero {
+    min-height: 320px;
+  }
+
+}
+
+</style>
 </head>
 <body>
 
@@ -200,12 +268,14 @@
       </div>
     </div>
 
-    <nav class="main-nav">
-      <a href="#about">About</a>
-      <a href="#mission">Mission</a>
-      <a href="#donations">Donations</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <button class="menu-toggle">☰</button>
+
+<nav class="main-nav">
+  <a href="#about">About</a>
+  <a href="#mission">Mission</a>
+  <a href="#donations">Donations</a>
+  <a href="#contact">Contact</a>
+</nav>
   </div>
 </header>
 
@@ -324,6 +394,7 @@
 
 </body>
 </html>
+
 
 
 
